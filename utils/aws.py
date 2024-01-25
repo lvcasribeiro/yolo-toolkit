@@ -57,3 +57,8 @@ def get_file_object_from_s3(bucket_name, s3_file_name):
         return response['Body']
     except Exception as e:
         return None
+
+# Retrieves a list of files from a folder of the s3 bucket:
+def list_s3_objects(bucket_name, s3_folder_name):
+    objects = yolo_bucket.list_objects_v2(Bucket=bucket_name, Prefix=s3_folder_name)
+    return [obj['Key'] for obj in objects.get('Contents', [])]
