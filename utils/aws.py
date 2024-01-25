@@ -2,7 +2,7 @@
 import boto3
 
 # Bucket S3 credentials:
-yolo_bucket = boto3.client('s3', aws_access_key_id='AKIA4MG5PQ7GSL7GVDAF', aws_secret_access_key='SxCTT0vGHUvf7uCxbqm7o5ZgbTp7KgJlA1v5EKST')
+yolo_bucket = boto3.client('s3', aws_access_key_id='your_aws_access_key_id', aws_secret_access_key='your_aws_secret_access_key')
 
 # Creates a new folder in the s3 bucket:
 def create_s3_folder(bucket_name, s3_folder_name):
