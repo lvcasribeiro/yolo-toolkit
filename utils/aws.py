@@ -19,9 +19,6 @@ def create_s3_folder(bucket_name, s3_folder_name):
 # Deletes a folder from the s3 bucket:
 def delete_s3_folder(bucket_name, s3_folder_name):
     try:
-        if not s3_folder_name.endswith('/'):
-            s3_folder_name += '/'
-
         objects = yolo_bucket.list_objects_v2(Bucket=bucket_name, Prefix=s3_folder_name)
         if 'Contents' in objects:
             for obj in objects['Contents']:
