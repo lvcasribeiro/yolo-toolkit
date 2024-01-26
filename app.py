@@ -58,7 +58,7 @@ def kml_compiled():
     except:
         pass
     finally:
-        threading.Timer(300, delete_kml_compiler_folder, args=(session['kml_folder_name'],)).start()
+        threading.Timer(300, delete_bucket_folder, args=(session['kml_folder_name'],)).start()
 
 # KML concatenated file download:
 @app.route('/kml_compiled_download', methods=['GET'])
@@ -75,11 +75,11 @@ def kml_compiled_download():
     except:
         pass
     finally:
-        threading.Timer(60, delete_kml_compiler_folder, args=(kml_folder,)).start()
+        threading.Timer(60, delete_bucket_folder, args=(kml_folder,)).start()
 
-# Delets kml folder:
-def delete_kml_compiler_folder(kml_folder):
-    aws.delete_s3_folder('yolo-toolkit-bucket', kml_folder)
+# Deletes a folder from the s3 bucket:
+def delete_bucket_folder(folder_name):
+    aws.delete_s3_folder('yolo-toolkit-bucket', folder_name)
 
 # Overall execution:
 if __name__ == '__main__':
