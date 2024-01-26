@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>YOLO Toolkit</title>
+    <link rel="shortcut icon" type="image/png" href="../assets/images/logos/favicon.png" />
+    <link rel="stylesheet" href="../static/css/styles.min.css" />
+</head>
+
+<body>
+    <!--  Body Wrapper -->
+    <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+        data-sidebar-position="fixed" data-header-position="fixed">
+        <!-- Sidebar Start -->
+        <aside class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div>
+                <div class="brand-logo d-flex align-items-center justify-content-between">
+                    <a href="/" class="text-nowrap logo-img">
+                        <div class="d-flex align-items-center gap-2">
+                            <i class="ti ti-3d-cube-sphere fs-8"></i>
+                            <h5 style="margin-top: 1.3vh;"><strong>YOLO Toolkit</strong></h5>
+                        </div>
+                    </a>
+                    <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
+                        <i class="ti ti-x fs-8"></i>
+                    </div>
+                </div>
+
+                <!-- Sidebar Nav -->
+                <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
+                    <ul id="sidebarnav">
+                        <!-- Home -->
+                        <li class="nav-small-cap">
+                            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                            <span class="hide-menu">Home</span>
+                        </li>
+
+                        <!-- Dashboard -->
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="/" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-layout-dashboard"></i>
+                                </span>
+                                <span class="hide-menu">Dashboard</span>
+                            </a>
+                        </li>
+
+                        <!-- Tools -->
+                        <li class="nav-small-cap">
+                            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                            <span class="hide-menu">TOOLS</span>
+                        </li>
+
+                        <!-- KML Compiler -->
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="/kml_compiler" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-pin"></i>
+                                </span>
+                                <span class="hide-menu">KML Compiler</span>
+                            </a>
+                        </li>
+
+                        <!-- Metadata Extractor -->
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="./metadata-extractor.html" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-photo-down"></i>
+                                </span>
+                                <span class="hide-menu">Metadata Extractor</span>
+                            </a>
+                        </li>
+
+                        <!-- Dataset Splitter -->
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="./dataset-splitter.html" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-arrows-split"></i>
+                                </span>
+                                <span class="hide-menu">Dataset Splitter</span>
+                            </a>
+                        </li>
+
+                        <!-- Location Cruiser -->
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="./location-cruiser.html" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-route"></i>
+                                </span>
+                                <span class="hide-menu">Location Cruiser</span>
+                            </a>
+                        </li>
+
+                        <!-- Label Counter -->
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="./label-counter.html" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-tags"></i>
+                                </span>
+                                <span class="hide-menu">Label Counter</span>
+                            </a>
+                        </li>
+
+                        <!-- Info -->
+                        <li class="nav-small-cap">
+                            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                            <span class="hide-menu">INFO</span>
+                        </li>
+
+                        <!-- About -->
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="./about.html" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-zoom-question"></i>
+                                </span>
+                                <span class="hide-menu">About</span>
+                            </a>
+                        </li>
+
+                        <!-- Sponsor -->
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="./sponsor.html" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-pig-money"></i>
+                                </span>
+                                <span class="hide-menu">Sponsor</span>
+                            </a>
+                        </li>
+
+                        <!-- License -->
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="./license.html" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-license"></i>
+                                </span>
+                                <span class="hide-menu">License</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+
+        <!--  Main wrapper -->
+        <div class="body-wrapper">
+            <!--  Header -->
+            <header class="app-header">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <ul class="navbar-nav">
+                        <li class="nav-item d-block d-xl-none">
+                            <a class="nav-link sidebartoggler nav-icon-hover" id="headerCollapse"
+                                href="javascript:void(0)">
+                                <i class="ti ti-menu-2"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-icon-hover" href="https://github.com/lvcasribeiro/yolo-toolkit"
+                                target="_blank">
+                                <i class="ti ti-brand-github"></i>
+                                <div class="notification bg-primary rounded-circle"></div>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
+                        <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
+                            <a href="./about.html" class="btn btn-primary">About</a>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="../static/images/user-profile.jpg" alt="" width="35" height="35"
+                                        class="rounded-circle">
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up"
+                                    aria-labelledby="drop2">
+                                    <div class="message-body">
+                                        <!-- <a href="javascript:void(0)"
+                                            class="d-flex align-items-center gap-2 dropdown-item">
+                                            <i class="ti ti-user fs-6"></i>
+                                            <p class="mb-0 fs-3">My Profile</p>
+                                        </a> -->
+                                        <a href="./authentication-login.html"
+                                            class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+
+            <div class="container-fluid">
+                <div class="col-sm-12 col-xl-12">
+                    <div class="card overflow-hidden rounded-2">
+                        <div class="position-relative">
+                            <img class="card-img-top rounded-0" src="../static/images/kml-compiler-sm.jpg" alt="...">
+                            <div
+                                class="bg-primary rounded-circle p-2 text-white d-inline-flex position-absolute bottom-0 end-0 mb-n3 me-3">
+                                <i class="ti ti-pin fs-4"></i>
+                            </div>
+                        </div>
+                        <div class="card-body pt-3 p-4">
+                            <h6 class="fw-semibold fs-4">KML Compiler</h6>
+                            <p class="card-text">
+                                A powerful solution for seamlessly compiling and merging multiple keyhole markup
+                                language files into a single, cohesive dataset. Streamlining the integration process,
+                                this tool ensures efficiency and accuracy in geospatial data management, catering to
+                                users seeking unified and consolidated KML file outputs.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6 col-xl-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h6 class="fw-semibold fs-4">Instructions</h6> <br>
+                                <ol class="list-group">
+                                    <li class="list-group-item"><strong>1.</strong> Click <strong>Choose Files</strong> and select all the KML files you want to merge;</li>
+                                    <li class="list-group-item"><strong>2.</strong> Once the KML files have been selected, click <strong>Upload</strong>;</li>
+                                    <li class="list-group-item"><strong>3.</strong> Wait for the merge process to complete successfully;</li>
+                                    <li class="list-group-item"><strong>4.</strong> Save the new consolidated KML file by clicking <strong>Download</strong>;</li>
+                                    <li class="list-group-item"><strong>5.</strong> If you wish to remerge KML files, click <strong>New Upload</strong>.</li>
+                                  </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-xl-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h6 class="fw-semibold fs-4">Upload</h6>
+                                <p class="mb-0">Here, u must drop all of your <strong>.kml</strong> files, containing
+                                    all the data u want to merge.</p> <br>
+
+                                <form action="/kml_compiled" enctype="multipart/form-data" method="post">
+                                    <div class="mb-3">
+                                        <input class="form-control form-control-sm" name="merge_kml_files" id="merge_kml_files" type="file" multiple>
+                                    </div>
+                                    {% if result_file == True %}
+                                    <small>
+                                        <div class="alert alert-success text-center alert-dismissible fade show"
+                                            role="alert">
+                                            Successfully compiled!
+                                            <button type="button" class="btn-close btn-sm" data-bs-dismiss="alert"
+                                                aria-label="Close"></button>
+                                        </div>
+                                    </small>
+                                    {% endif %}
+                                    <div class="d-flex justify-content-around">
+                                        <button type="submit" class="btn btn-primary btn-sm"
+                                            id="submit-btn">Upload</button>
+                                        {% if result_file == True %}
+                                        <a class="btn btn-success btn-sm" href="/kml_compiled_download"
+                                            download="merged-kml-file.kml">
+                                            Download
+                                        </a>
+                                        {% endif %}
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Imports -->
+    <script src="../static/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../static/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/js/sidebarmenu.js"></script>
+    <script src="../static/js/app.min.js"></script>
+    <script src="../static/libs/simplebar/dist/simplebar.js"></script>
+</body>
+
+</html>
