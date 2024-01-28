@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>YOLO Toolkit</title>
-    <link rel="shortcut icon" type="image/png" href="../assets/images/logos/favicon.png" />
+    <link rel="shortcut icon" type="image/png" href="../static/images/brain-logo.png" />
     <link rel="stylesheet" href="../static/css/styles.min.css" />
 </head>
 
@@ -20,7 +20,7 @@
                 <div class="brand-logo d-flex align-items-center justify-content-between">
                     <a href="/" class="text-nowrap logo-img">
                         <div class="d-flex align-items-center gap-2">
-                            <i class="ti ti-3d-cube-sphere fs-8"></i>
+                            <i class="ti ti-brain fs-8"></i>
                             <h5 style="margin-top: 1.3vh;"><strong>YOLO Toolkit</strong></h5>
                         </div>
                     </a>
@@ -66,7 +66,7 @@
 
                         <!-- Metadata Extractor -->
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="./metadata-extractor.html" aria-expanded="false">
+                            <a class="sidebar-link" href="/metadata_extractor" aria-expanded="false">
                                 <span>
                                     <i class="ti ti-photo-down"></i>
                                 </span>
@@ -240,24 +240,37 @@
                                     <div class="mb-3">
                                         <input class="form-control form-control-sm" name="merge_kml_files" id="merge_kml_files" type="file" multiple>
                                     </div>
-                                    {% if result_file == True %}
+
+                                    {% if success_control == True %}
                                     <small>
-                                        <div class="alert alert-success text-center alert-dismissible fade show"
-                                            role="alert">
+                                        <div class="alert alert-success text-center alert-dismissible fade show" role="alert">
                                             Successfully compiled!
-                                            <button type="button" class="btn-close btn-sm" data-bs-dismiss="alert"
-                                                aria-label="Close"></button>
+                                            <button type="button" class="btn-close btn-sm" data-bs-dismiss="alert" aria-label="Close"></button>
                                         </div>
                                     </small>
                                     {% endif %}
+
+                                    {% if problem_control == 'files_extension' %}
+                                    <small>
+                                        <div class="alert alert-danger text-center alert-dismissible fade show" role="alert">
+                                            Two or more files with <strong>.kml</strong> extension were not identified!
+                                            <button type="button" class="btn-close btn-sm" data-bs-dismiss="alert" aria-label="Close"></button>
+                                        </div>
+                                    </small>
+                                    {% elif problem_control == 'files_quantity' %}
+                                    <small>
+                                        <div class="alert alert-danger text-center alert-dismissible fade show" role="alert">
+                                            No files were selected!
+                                            <button type="button" class="btn-close btn-sm" data-bs-dismiss="alert" aria-label="Close"></button>
+                                        </div>
+                                    </small>
+                                    {% endif %}
+
                                     <div class="d-flex justify-content-around">
-                                        <button type="submit" class="btn btn-primary btn-sm"
-                                            id="submit-btn">Upload</button>
-                                        {% if result_file == True %}
-                                        <a class="btn btn-success btn-sm" href="/kml_compiled_download"
-                                            download="merged-kml-file.kml">
-                                            Download
-                                        </a>
+                                        <button type="submit" class="btn btn-primary btn-sm" id="submit-btn">Upload</button>
+
+                                        {% if success_control == True %}
+                                        <a class="btn btn-success btn-sm" href="/kml_compiled_download" download="compiled-kml.kml">Download</a>
                                         {% endif %}
                                     </div>
                                 </form>
