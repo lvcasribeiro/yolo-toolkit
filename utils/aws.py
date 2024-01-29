@@ -59,3 +59,8 @@ def get_file_object_from_s3(bucket_name, s3_file_name):
 def list_s3_objects(bucket_name, s3_folder_name):
     objects = yolo_bucket.list_objects_v2(Bucket=bucket_name, Prefix=s3_folder_name)
     return [obj['Key'] for obj in objects.get('Contents', [])]
+
+# Retrieves a response if a file or folder of the s3 bucket exists:
+def does_s3_folder_exist(bucket_name, s3_folder_name):
+    response = yolo_bucket.list_objects_v2(Bucket=bucket_name, Prefix=s3_folder_name)
+    return 'Contents' in response
