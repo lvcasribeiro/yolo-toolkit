@@ -2,12 +2,14 @@
 from flask import Flask, render_template
 
 from routes.kml_compiler_route import kml_compiler_bp
+from routes.metadata_extractor_route import metadata_extractor_bp
 
 # Flask constructor:
 app = Flask(__name__)
 app.secret_key = 'lvc4s'
 
 app.register_blueprint(kml_compiler_bp)
+app.register_blueprint(metadata_extractor_bp)
 
 # Home route:
 @app.route('/')
