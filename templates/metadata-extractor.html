@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>YOLO Toolkit</title>
-    
+
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
-    
+
     <link rel="shortcut icon" type="image/png" href="../static/images/brain-logo.png" />
     <link rel="stylesheet" href="../static/css/styles.min.css" />
 </head>
@@ -198,7 +198,8 @@
                 <div class="col-sm-12 col-xl-12">
                     <div class="card overflow-hidden rounded-2">
                         <div class="position-relative">
-                            <img class="card-img-top rounded-0" src="../static/images/metadata-extractor-sm.jpg" alt="...">
+                            <img class="card-img-top rounded-0" src="../static/images/metadata-extractor-sm.jpg"
+                                alt="...">
                             <div
                                 class="bg-primary rounded-circle p-2 text-white d-inline-flex position-absolute bottom-0 end-0 mb-n3 me-3">
                                 <i class="ti ti-photo-down fs-4"></i>
@@ -207,10 +208,9 @@
                         <div class="card-body pt-3 p-4">
                             <h6 class="fw-semibold fs-4">Metadata Extractor</h6>
                             <p class="card-text">
-                                A powerful solution for seamlessly compiling and merging multiple keyhole markup
-                                language files into a single, cohesive dataset. Streamlining the integration process,
-                                this tool ensures efficiency and accuracy in geospatial data management, catering to
-                                users seeking unified and consolidated KML file outputs.
+                                An advanced tool designed to effortlessly extract comprehensive metadata from images.
+                                Empowering users with a streamlined process, this tool ensures efficient retrieval of
+                                key information embedded within images. Enhance your workflow making image management a seamless experience.
                             </p>
                         </div>
                     </div>
@@ -222,12 +222,17 @@
                             <div class="card-body">
                                 <h6 class="fw-semibold fs-4">Instructions</h6> <br>
                                 <ol class="list-group">
-                                    <li class="list-group-item"><strong>1.</strong> Click <strong>Choose Files</strong> and select all the KML files you want to merge;</li>
-                                    <li class="list-group-item"><strong>2.</strong> Once the KML files have been selected, click <strong>Upload</strong>;</li>
-                                    <li class="list-group-item"><strong>3.</strong> Wait for the merge process to complete successfully;</li>
-                                    <li class="list-group-item"><strong>4.</strong> Save the new consolidated KML file by clicking <strong>Download</strong>;</li>
-                                    <li class="list-group-item"><strong>5.</strong> If you wish to remerge KML files, click <strong>New Upload</strong>.</li>
-                                  </ol>
+                                    <li class="list-group-item"><strong>1.</strong> Click <strong>Choose File</strong>
+                                        and select the zip file with your images;</li>
+                                    <li class="list-group-item"><strong>2.</strong> Once the zip file have been
+                                        selected, click <strong>Upload</strong>;</li>
+                                    <li class="list-group-item"><strong>3.</strong> Wait for the extraction process to
+                                        complete successfully;</li>
+                                    <li class="list-group-item"><strong>4.</strong> Save the new consolidated files
+                                        by clicking <strong>Download</strong>;</li>
+                                    <li class="list-group-item"><strong>5.</strong> If you wish to explore more files,
+                                        click <strong>New Upload</strong>.</li>
+                                </ol>
                             </div>
                         </div>
                     </div>
@@ -293,21 +298,22 @@
                         <div class="card">
                             <div class="card-body">
                                 <h6 class="fw-semibold fs-4">Image Metadata Datasample</h6>
-
-                                <table class="table" id="datatables-all">
-                                    <thead>
-                                        {% for header in headings %}
-                                        <th>{{ header }}</th>
+                                <div class="table-responsive">
+                                    <table class="table" id="datatables-all">
+                                        <thead>
+                                            {% for header in headings %}
+                                            <th>{{ header }}</th>
+                                            {% endfor %}
+                                        </thead>
+                                        {% for row in data %}
+                                        <tr>
+                                            {% for cell in row %}
+                                            <td>{{ cell }}</td>
+                                            {% endfor %}
+                                        </tr>
                                         {% endfor %}
-                                    </thead>
-                                    {% for row in data %}
-                                    <tr>
-                                        {% for cell in row %}
-                                        <td>{{ cell }}</td>
-                                        {% endfor %}
-                                    </tr>
-                                    {% endfor %}
-                                </table>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -323,7 +329,8 @@
     <script src="../static/js/sidebarmenu.js"></script>
     <script src="../static/js/app.min.js"></script>
     <script src="../static/libs/simplebar/dist/simplebar.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
+        crossorigin="anonymous"></script>
     <script src="/static/libs/datatable/datatables-simple-demo.js"></script>
 </body>
 
