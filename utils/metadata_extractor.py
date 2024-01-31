@@ -108,7 +108,8 @@ def coordinates(parent_folder):
         images_info_dataframe.to_excel(temp_excel.name, index=False)
 
     excel_key = f'{parent_folder}/images-metadata-excel.xlsx'
-    aws.yolo_bucket.put_object(Bucket='yolo-toolkit-bucket', Key=excel_key, Body=temp_excel.name)
+    with open(temp_excel.name, 'rb') as excel_file:
+        aws.yolo_bucket.put_object(Bucket='yolo-toolkit-bucket', Key=excel_key, Body=excel_file.read())
 
     kml = simplekml.Kml()
     for index, row in images_info_dataframe.iterrows():
@@ -122,7 +123,8 @@ def coordinates(parent_folder):
         kml.save(temp_kml.name)
 
     kml_key = f'{parent_folder}/images-metadata-kml.kml'
-    aws.yolo_bucket.put_object(Bucket='yolo-toolkit-bucket', Key=kml_key, Body=temp_kml.name)
+    with open(temp_kml.name, 'rb') as kml_file:
+        aws.yolo_bucket.put_object(Bucket='yolo-toolkit-bucket', Key=kml_key, Body=kml_file.read())
     
     data = []
 
