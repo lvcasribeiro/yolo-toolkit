@@ -42,6 +42,8 @@ def kml_compiled():
         kml_compiler.concatenate_kml_files(session['kml_folder_name'])
 
         return render_template('kml-compiler.html', success_control=True, problem_control=None)
+    except:
+        render_template('error.html')
     finally:
         threading.Timer(300, delete_bucket_folder, args=(session['kml_folder_name'],)).start()
 
@@ -58,6 +60,8 @@ def kml_compiled_download():
                 download_name='compiled-kml.kml',
                 as_attachment=True
             )
+    except:
+        render_template('error.html')
     finally:
         threading.Timer(60, delete_bucket_folder, args=(kml_folder,)).start()
 
