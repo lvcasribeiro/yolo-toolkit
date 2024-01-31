@@ -58,7 +58,7 @@ def metadata_extracted_download_excel():
         
         if metadata_folder is not None:
             return send_file(
-                aws.get_file_object_from_s3('yolo-toolkit-bucket', f'{metadata_folder}/images-metadata-excel.kml'),
+                aws.get_file_object_from_s3('yolo-toolkit-bucket', f'{metadata_folder}/images-metadata-excel.xlsx'),
                 mimetype='text/csv',
                 download_name='images-metadata-excel.xlsx',
                 as_attachment=True
