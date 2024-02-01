@@ -1,6 +1,7 @@
 # Imports:
-from flask import Flask, render_template
+from flask import Flask
 
+from routes.main_route import main_bp
 from routes.kml_compiler_route import kml_compiler_bp
 from routes.metadata_extractor_route import metadata_extractor_bp
 
@@ -10,17 +11,9 @@ app.secret_key = 'lvc4s'
 
 app.register_blueprint(kml_compiler_bp)
 app.register_blueprint(metadata_extractor_bp)
-
-# Home route:
-@app.route('/')
-def home():
-    return render_template('index.html')
-
-# Home route:
-@app.route('/error')
-def error():
-    return render_template('error.html')
+app.register_blueprint(main_bp)
 
 # Overall execution:
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
+ 
